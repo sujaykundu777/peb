@@ -1,0 +1,121 @@
+
+.nav-bar{
+ 
+     height: 60px;
+     background-color: #000;
+     color: #fff;
+     width: 100%;
+     display: block;
+     z-index: 99999;
+     margin-bottom: 20px;
+}
+    .container{
+        max-width: 100%;
+    }
+
+.navigation {
+  float: left;
+
+}
+.brand{
+ float: left;
+
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    float: left;
+    display: inline;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+
+.footer{
+    height: 50px;
+    background-color: #111;
+    width: 100%;
+}
+.footer-text{
+    padding:10px;
+    text-align:center;
+    color: #fff;
+}
+/* For Parallax */
+
+#parallax1{
+    background-image: url('../img/1.jpg');
+    height:700px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center top;
+    margin-top:-30px;
+    margin-bottom:0px;
+}
+.page-title-parallax{
+    background-image: url('../img/page-header.jpg');
+    height:200px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+    margin-top:-30px;
+    margin-bottom:0px;
+}
+body{
+    background-color: #111;
+    color:#ccc;
+}
+.jumbotron-text{
+    text-align: center;
+    padding-top:80px;
+    color:#fff;
+}
+.jumbotron-btn{
+      text-align: center;
+      padding-top:20px;
+      padding-bottom:20px;
+      height:80px;
+      width: 30%;
+      font-size: 25px;
+      margin-left: 35%;
+}
+nav{
+    background-color: #000;
+    border-bottom : 1px solid #fff;
+}
+#loginForm {
+    margin-top:50px;
+    color:#18ffff ;
+    font-size: 30px;
+}
+#registerForm{
+    margin-top:50px;
+    color: #18ffff;
+    font-size: 30px;
+}
+.formButton{
+    width:200px;
+    margin-left:25%;
+}
+.dash-title-parallax{
+     background-image: url('../img/bg.jpg');
+    height:200px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+    margin-top:-30px;
+    margin-bottom:0px;
+}
