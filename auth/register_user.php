@@ -8,6 +8,7 @@ $email = mysqli_real_escape_string($conn,$_POST['email']);
 $password = mysqli_real_escape_string($conn,$_POST['password']);
 $enc_password = md5($password); 
 $bool = true;
+
 // check connection 
 if(mysqli_connect_errno()){
   
@@ -29,7 +30,8 @@ if(mysqli_connect_errno()){
   }
  
   if($bool){ //check if bool is true
-     mysqli_query($conn,"INSERT INTO users (username,name,email,password) VALUES ('$username','$name','$email','$enc_password')");   
+    $accesslevel = 0;
+     mysqli_query($conn,"INSERT INTO users (username,name,email,password,accesslevel) VALUES ('$username','$name','$email','$enc_password','$accesslevel')");   
      //Prompt the user
      Print '<script>alert("Successfully Registered ! ");</script>';
      Print '<script>window.location.assign("../login.php");</script>';

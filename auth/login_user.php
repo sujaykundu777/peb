@@ -12,33 +12,41 @@ $table_username = "";
 $table_password = "";
 $table_name  = "";
 $table_email = "";
+$table_accesslevel = "";
 
 
 //If there is any username that already exists then check the password
 if($exists > 0){
+   
     
     while($row = mysqli_fetch_assoc($result)){
            $table_username = $row['username'];      //Store the first row username to the $table_users
            $table_password = $row['password'];
            $table_name= $row['name'];
            $table_email = $row['email'];
-            //Store the first row password to the $table_password
+           $table_accesslevel = $row['accesslevel'];
+            //Store the first row 
     }
     //Check the username and password for the first user
     if(($username == $table_username) && ($enc_password == $table_password))
-    {
-           if($enc_password == $table_password){
-                            //saving in a global variable
-               $_SESSION["loggedin"] = true;             
-               $_SESSION["username"] = $table_username;
-               $_SESSION["name"] = $table_name;
-               $_SESSION["email"] = $table_email;
-               
-
+    {         
+                  //saving in a global variable
+                  $_SESSION["loggedin"] = true;             
+                  $_SESSION["username"] = $table_username;
+                  $_SESSION["name"] = $table_name;
+                  $_SESSION["email"] = $table_email;
+       
+          if($table_accesslevel == 0){
+        
                Print '<script>alert("Login Successful");</script>';
                Print '<script>window.location.assign("../browse.php");</script>';
                
-           }      
+           }  
+           else if($table_accesslevel == 1){
+             
+                Print '<script>alert("Login Succesful as Admin");</script>';
+                Print '<script>window.location.assign("../admin.php");</script>';
+           }    
     }
     else{
         Print '<script>alert("Incorrect Password");</script>';

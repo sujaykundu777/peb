@@ -19,6 +19,19 @@
   <script src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
 
  </head>
+ <?php 
+   session_start(); //Starts the session
+   if($_SESSION["username"]){
+   }
+   else{
+//redirects to login if user is not logged 
+header("location:login.php");
+   }
+   $username = $_SESSION["username"];
+   $name = $_SESSION["name"];
+   $email = $_SESSION["email"];
+     //assigns user value
+ ?>
    <body>
  
   <div class="navbar-fixed">
@@ -43,6 +56,10 @@
    <div class="row">
            <div class="container">
               <h1> Users </h1>
+              <h3> Name : <?php Print "$name" ?> </h3>
+ <h3> Email : <?php Print "$email" ?> </h3>
+ <h3> Username : <?php Print "$username" ?> </h3>
+
             </div>
             <div class="container">
                <h1> Ebooks </h1>
