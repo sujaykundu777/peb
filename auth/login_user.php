@@ -14,7 +14,7 @@ $table_name  = "";
 $table_email = "";
 $table_accesslevel = "";
 
-
+//$_SESSION["users"] = $exists;
 //If there is any username that already exists then check the password
 if($exists > 0){
    
@@ -25,6 +25,7 @@ if($exists > 0){
            $table_name= $row['name'];
            $table_email = $row['email'];
            $table_accesslevel = $row['accesslevel'];
+        
             //Store the first row 
     }
     //Check the username and password for the first user
@@ -35,15 +36,17 @@ if($exists > 0){
                   $_SESSION["username"] = $table_username;
                   $_SESSION["name"] = $table_name;
                   $_SESSION["email"] = $table_email;
+                  $_SESSION["useraccess"] = $table_accesslevel;
+                
        
           if($table_accesslevel == 0){
-        
+                        
                Print '<script>alert("Login Successful");</script>';
                Print '<script>window.location.assign("../browse.php");</script>';
                
            }  
            else if($table_accesslevel == 1){
-             
+                      
                 Print '<script>alert("Login Succesful as Admin");</script>';
                 Print '<script>window.location.assign("../admin.php");</script>';
            }    

@@ -24,7 +24,7 @@ if(mysqli_connect_errno()){
      $table_users = $row['username']; 
     if($username == $table_users){
      $bool = false;    
-    // echo "Username has been taken ! "; 
+    // echo "Username has been taken ! "; z
      printf("Username already taken ");//Prompt the user
     }
   }
