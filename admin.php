@@ -13,6 +13,7 @@
 //redirects to login if user is not logged 
 header("location:login.php");
    }
+   mysqli_close($conn);
  ?>
 <!DOCTYPE html>
  <html>
