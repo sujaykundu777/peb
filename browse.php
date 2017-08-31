@@ -1,3 +1,20 @@
+<?php 
+   session_start(); //Starts the session
+   if($_SESSION["username"]){
+    include 'auth/connection.php';
+    $query = "SELECT * FROM ebooks";
+    $result = mysqli_query($conn,$query);
+   
+   }
+   else{
+//redirects to login if user is not logged 
+header("location:login.php");
+   }
+   $username = $_SESSION["username"];
+   $name = $_SESSION["name"];
+   $email = $_SESSION["email"];
+     //assigns user value
+ ?>
 <!DOCTYPE html>
  <html>
    <head> 
@@ -24,19 +41,7 @@
 
  </head>
   
- <?php 
-   session_start(); //Starts the session
-   if($_SESSION["username"]){
-   }
-   else{
-//redirects to login if user is not logged 
-header("location:login.php");
-   }
-   $username = $_SESSION["username"];
-   $name = $_SESSION["name"];
-   $email = $_SESSION["email"];
-     //assigns user value
- ?>
+
    <body>
   <div class="navbar-fixed">
    <nav>
@@ -62,12 +67,21 @@ header("location:login.php");
 
       <div class="row">
         
-        <div class="ebook">
-          <h2> Ebook Image </h2>
-          <h1> Ebook 1 </h1>
-          <p> Some description </p>
-
-        </div>
+      <div class="container">
+      <?php 
+      echo '<table class="ebook_table" border="1">';
+         while($row = mysqli_fetch_assoc($result)){
+          echo '<tr>'; 
+          foreach( $row as $value){
+            echo '<td>' . $value . '</td>';
+           }
+           echo '</tr>';
+         }
+         echo '</table>';
+      ?>
+    
+    </div>
+    
     
      </div>       
 
