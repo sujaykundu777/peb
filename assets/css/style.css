@@ -141,3 +141,15 @@ nav{
     height: 300px;
     border: 1px solid #fff;
 }
+
+.ebook_table{
+    border: 1px solid #fff;
+}
+
+.section_title,.section_links {
+    float: left;
+}
+.section_links{
+    margin-top:50px;
+    margin-left:15%;
+}

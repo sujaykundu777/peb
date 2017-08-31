@@ -1,9 +1,12 @@
 <?php 
    session_start(); //Starts the session
    include 'auth/connection.php';
-   $query = "SELECT * FROM users ";
-   $result = mysqli_query($conn,$query);
-   $users = mysqli_num_rows($result);
+   $select_users = "SELECT * FROM users ";
+   $select_ebooks = "SELECT * FROM ebooks";
+   $result_users = mysqli_query($conn,$select_users);
+   $result_ebooks = mysqli_query($conn,$select_ebooks);
+   $users = mysqli_num_rows($result_users);
+   $ebooks = mysqli_num_rows($result_ebooks);
    $username = $_SESSION["username"];
    $name = $_SESSION["name"];
    $email = $_SESSION["email"];
@@ -73,11 +76,11 @@ header("location:login.php");
         </div>
         <div class="card col-4">
              <h2> Ebooks </h2>
-              <h1> 3 </h1>
+              <h1> <?php printf("%d",$ebooks); ?> </h1>
         </div>
         <div class="card col-4">
              <h2> Blog Posts </h2>
-              <h1> 5 </h1>
+              <h1> 0 </h1>
         </div>
   </div>
 
