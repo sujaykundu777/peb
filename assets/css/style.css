@@ -134,3 +134,10 @@ nav{
     padding: 20px;
     margin: 20px;
 }
+
+#ebook-details{
+    width: 500px;
+    padding: 20px;
+    height: 300px;
+    border: 1px solid #fff;
+}

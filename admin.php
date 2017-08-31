@@ -23,7 +23,6 @@ header("location:login.php");
      <meta name="keyword" content="programming,ebooks">
      <meta name="description" content="Download Programmming Ebooks">
        
-  
 
      <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -44,9 +43,10 @@ header("location:login.php");
     <div class="nav-wrapper nav-primary">
       <a href="admin.php" class="brand-logo"> Programming Ebooks</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="browse.php">Browse</a></li>
-        <li><a href="users.php"> Users </a> </li>
-        <li><a href="ebooks.php">Ebooks</a> </li>
+    
+        <li><a href="manage_users.php">Manage Users </a> </li>
+        <li><a href="manage_ebooks.php">Manage Ebooks</a> </li>
+        <li><a href="profile.php"><?php Print "$username"; ?> </a></li>
         <li><a href="auth/logout.php"> Logout </a> </li> 
       </ul>
     </div>
